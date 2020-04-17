@@ -1,0 +1,2 @@
+rootProject.name='SharedPreferences_AND8AM2020'
+include ':app'
