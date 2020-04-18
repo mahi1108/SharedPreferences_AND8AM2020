@@ -1,6 +1,7 @@
 package cubex.mahesh.sharedpreferences_and8am2020
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,12 @@ class RegisterFragment : Fragment() {
             spe?.putString("mno",v.reg_mno.text.toString())
             spe?.putString("email",v.reg_email.text.toString())
             spe?.commit()
+
+            var fManager = activity?.supportFragmentManager
+            var fTx = fManager?.beginTransaction()
+            fTx?.add(R.id.flayout, LoginFragment())
+            fTx?.addToBackStack("true")
+            fTx?.commit()
         }
 
         return v;
